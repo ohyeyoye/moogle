@@ -2,9 +2,11 @@ import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
+import { useDispatch } from "react-redux";
 import isEmpty from "is-empty";
 import ClipLoader from "react-spinners/ClipLoader";
 import { getYear } from "../utils";
+import { setMovie } from "../reducers";
 
 const SEARCH_MOVIES = gql`
   query searchMovie($keyword: String!) {
@@ -20,9 +22,10 @@ const SEARCH_MOVIES = gql`
 `;
 
 const SearchBar = props => {
-  const { className, onSuggestionClick } = props;
+  const { className } = props;
   const [keyword, setKeyword] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const dispatch = useDispatch();
   const textField = useRef();
   const onChange = e => {
     setKeyword(e.target.value);
@@ -30,7 +33,8 @@ const SearchBar = props => {
   };
   const onClick = e => {
     const index = Number(e.target.dataset.index);
-    onSuggestionClick(data.movies[index]);
+    dispatch(setMovie(data.movies[index]));
+    console.log(data.movies[index]);
     setShowSuggestions(false);
   };
   const { error, loading, data } = useQuery(SEARCH_MOVIES, {
@@ -46,8 +50,8 @@ const SearchBar = props => {
         onClick={onClick}
         data-index={index}
       >
-        <span className="suggestion-title">{movie.title}</span>
-        <span className="suggestion-release-date">
+        <span>{movie.title}</span>
+        <span>
           {isNaN(movie.release_date) ? getYear(movie.release_date) : "Unknown"}
         </span>
       </li>
@@ -107,6 +111,9 @@ const Suggestions = styled.ul`
     display: flex;
     justify-content: space-between;
     padding: 0.5rem;
+    span {
+      pointer-events: none;
+    }
     &:hover {
       background-color: rgba(120, 120, 120, 1);
     }

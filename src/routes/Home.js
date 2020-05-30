@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 import { SearchBar, MovieCard } from "../components";
 
 const Home = props => {
   const { className } = props;
-  const [movie, setMovie] = useState();
-  const onSuggestionClick = data => {
-    console.log(data);
-    setMovie(data);
-  };
+  const movie = useSelector(state => state.movie);
   return (
     <div className={className}>
       <form className="search-form" onSubmit={e => e.preventDefault()}>
-        <SearchBar onSuggestionClick={onSuggestionClick} />
+        <SearchBar />
       </form>
       <div className="search-result">
         {movie && <MovieCard movie={movie} />}
