@@ -6,6 +6,7 @@ const Home = props => {
   const { className } = props;
   const [movie, setMovie] = useState();
   const onSuggestionClick = data => {
+    console.log(data);
     setMovie(data);
   };
   return (

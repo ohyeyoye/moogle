@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
+import { MdSentimentVeryDissatisfied } from "react-icons/md";
 import { getYear, getRatingColor } from "../utils";
 const MovieCard = props => {
   const { className, movie } = props;
@@ -8,12 +9,20 @@ const MovieCard = props => {
     <div className={className}>
       <div className="img-container">
         <img src={poster_path} alt={`${title}`} draggable="false" />
+        {!poster_path && (
+          <div className="error-message">
+            <MdSentimentVeryDissatisfied className="error-icon" />
+            <span>Poster Not Found.</span>
+          </div>
+        )}
       </div>
       <span className="rating">{rating}</span>
       <div className="movie-info">
         <div className="title-date-container">
           <span className="movie-title">{title}</span>
-          <span className="release-date">{getYear(release_date)}</span>
+          <span className="release-date">
+            {isNaN(release_date) ? getYear(release_date) : "Unknown"}
+          </span>
         </div>
         <p className="overview">{overview}</p>
       </div>
@@ -44,6 +53,22 @@ export default styled(MovieCard)`
       width: 100%;
       height: 100%;
       z-index: 1;
+    }
+    .error-message {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      font-size: 2em;
+      .error-icon {
+        width: 3rem;
+        height: 3rem;
+      }
     }
   }
   .rating {
@@ -85,7 +110,7 @@ export default styled(MovieCard)`
       }
       .release-date {
         font-size: 1.2em;
-        width: 3rem;
+        width: 5rem;
         text-align: center;
       }
     }

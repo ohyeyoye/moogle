@@ -48,7 +48,7 @@ const SearchBar = props => {
       >
         <span className="suggestion-title">{movie.title}</span>
         <span className="suggestion-release-date">
-          {getYear(movie.release_date)}
+          {isNaN(movie.release_date) ? getYear(movie.release_date) : "Unknown"}
         </span>
       </li>
     ));
