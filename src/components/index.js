@@ -1,3 +1,4 @@
+import Logo from "./Logo";
 import SearchBar from "./SearchBar";
-
-export { SearchBar };
+import MovieCard from "./MovieCard";
+export { Logo, SearchBar, MovieCard };
