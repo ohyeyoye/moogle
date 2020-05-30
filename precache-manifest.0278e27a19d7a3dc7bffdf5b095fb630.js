@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a6158b1af42b70b3cfa1c7df3228c906",
+    "revision": "b5d21bcbac9a4d005fb68d3f3a45b3e2",
     "url": "/moogle/index.html"
   },
   {
