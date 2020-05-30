@@ -1,18 +1,17 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { gql } from "apollo-boost";
-
-const GET_MOVIES = gql`
-  {
-    movies {
-      id
-    }
-  }
-`;
+import { useQuery } from "@apollo/react-hooks";
+import { SearchBar } from "../components";
 
 const Home = props => {
   const { className } = props;
-  return <div className={className}>Home</div>;
+
+  return (
+    <div className={className}>
+      <SearchBar />
+    </div>
+  );
 };
 
 export default styled(Home)``;
