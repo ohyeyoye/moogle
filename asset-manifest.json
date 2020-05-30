@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/moogle/static/css/main.24a07e03.chunk.css",
+    "main.js": "/moogle/static/js/main.43cec3ad.chunk.js",
+    "main.js.map": "/moogle/static/js/main.43cec3ad.chunk.js.map",
+    "runtime-main.js": "/moogle/static/js/runtime-main.01b35658.js",
+    "runtime-main.js.map": "/moogle/static/js/runtime-main.01b35658.js.map",
+    "static/js/2.2682382c.chunk.js": "/moogle/static/js/2.2682382c.chunk.js",
+    "static/js/2.2682382c.chunk.js.map": "/moogle/static/js/2.2682382c.chunk.js.map",
+    "index.html": "/moogle/index.html",
+    "precache-manifest.89e5a6ece9d63c46739b271a3dd195ea.js": "/moogle/precache-manifest.89e5a6ece9d63c46739b271a3dd195ea.js",
+    "service-worker.js": "/moogle/service-worker.js",
+    "static/css/main.24a07e03.chunk.css.map": "/moogle/static/css/main.24a07e03.chunk.css.map",
+    "static/js/2.2682382c.chunk.js.LICENSE.txt": "/moogle/static/js/2.2682382c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.01b35658.js",
+    "static/js/2.2682382c.chunk.js",
+    "static/css/main.24a07e03.chunk.css",
+    "static/js/main.43cec3ad.chunk.js"
+  ]
+}
