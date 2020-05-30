@@ -1,11 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import isEmpty from "is-empty";
 import { SearchBar, MovieCard } from "../components";
 
 const Home = props => {
   const { className } = props;
-  const [movie, setMovie] = useState(null);
+  const [movie, setMovie] = useState();
   const onSuggestionClick = data => {
     setMovie(data);
   };

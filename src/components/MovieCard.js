@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { getYear } from "../utils";
+import { getYear, getRatingColor } from "../utils";
 const MovieCard = props => {
   const { className, movie } = props;
   const { title, overview, rating, release_date, poster_path } = movie;
@@ -52,7 +52,8 @@ export default styled(MovieCard)`
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: ${props => getRatingColor(props.movie.rating).bg};
+    color: ${props => getRatingColor(props.movie.rating).text};
     font-weight: bold;
     text-align: center;
     line-height: 4rem;
