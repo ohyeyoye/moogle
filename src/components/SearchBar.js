@@ -84,6 +84,8 @@ const TextField = styled.input.attrs(() => ({
   type: "text",
   placeholder: "Search...",
 }))`
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
   width: 100%;
   background-color: rgba(80, 80, 80, 1);
   font-size: 1em;
