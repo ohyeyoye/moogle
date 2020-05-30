@@ -101,12 +101,12 @@ export default styled(MovieCard)`
         position: absolute;
         bottom: 0;
         right: 0;
-        width: 15%;
+        width: 50%;
         height: 1.2em;
         background: linear-gradient(
           to right,
           rgba(255, 255, 255, 0),
-          rgba(255, 255, 255, 1) 75%
+          rgba(255, 255, 255, 1) 50%
         );
       }
     }

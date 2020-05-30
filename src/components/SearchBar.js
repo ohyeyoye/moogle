@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import isEmpty from "is-empty";
+import ClipLoader from "react-spinners/ClipLoader";
 import { getYear } from "../utils";
 
 const SEARCH_MOVIES = gql`
@@ -65,6 +66,11 @@ const SearchBar = props => {
   return (
     <div className={className}>
       <TextField onChange={onChange} value={keyword} ref={textField} />
+      {!isEmpty(keyword) && loading && (
+        <div className="spinner-container">
+          <ClipLoader className="spinner" size="20" color="white" />
+        </div>
+      )}
       <Suggestions>{showSuggestions && data && renderSuggestion()}</Suggestions>
     </div>
   );
@@ -83,6 +89,9 @@ const TextField = styled.input.attrs(() => ({
   padding: 0 0.5rem;
   &:focus {
     outline: none;
+  }
+  &::placeholder {
+    color: rgba(200, 200, 200, 1);
   }
 `;
 
@@ -105,7 +114,16 @@ const Suggestions = styled.ul`
 `;
 
 export default styled(SearchBar)`
+  position: relative;
   background-color: transparent;
   border-radius: 0.25rem;
   color: white;
+  .spinner-container {
+    width: 1.25rem;
+    height: 1.25rem;
+    position: absolute;
+    top: 0;
+    right: 0.375rem;
+    transform: translateY(0.375rem);
+  }
 `;
