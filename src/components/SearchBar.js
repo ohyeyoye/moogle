@@ -35,6 +35,7 @@ const SearchBar = props => {
     const index = Number(e.target.dataset.index);
     dispatch(setMovie(data.movies[index]));
     console.log(data.movies[index]);
+    setKeyword("");
     setShowSuggestions(false);
   };
   const { error, loading, data } = useQuery(SEARCH_MOVIES, {
@@ -107,7 +108,7 @@ const Suggestions = styled.ul`
   background-color: rgba(80, 80, 80, 1);
   user-select: none;
   max-height: 20rem;
-  overflow: scroll;
+  overflow: auto;
   opacity: 0.8;
   .suggestion {
     display: flex;

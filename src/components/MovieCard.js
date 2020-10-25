@@ -4,9 +4,14 @@ import { MdSentimentVeryDissatisfied } from "react-icons/md";
 import { getYear, getRatingColor } from "../utils";
 const MovieCard = props => {
   const { className, movie } = props;
-  const { title, overview, rating, release_date, poster_path } = movie;
+  const { id, title, overview, rating, release_date, poster_path } = movie;
   return (
-    <div className={className}>
+    <a
+      className={`${className} btn`}
+      href={`https://www.themoviedb.org/movie/${id}`}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
       <div className="img-container">
         <img src={poster_path} alt={`${title}`} draggable="false" />
         {!poster_path && (
@@ -26,7 +31,7 @@ const MovieCard = props => {
         </div>
         <p className="overview">{overview}</p>
       </div>
-    </div>
+    </a>
   );
 };
 
@@ -44,7 +49,7 @@ export default styled(MovieCard)`
     position: relative;
     height: 70%;
     overflow: hidden;
-    transform: skewY(-10deg) translateY(-3.5rem);
+    transform: skewY(-10deg) translateY(-2rem);
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     img {
       height: 20rem;
@@ -74,7 +79,7 @@ export default styled(MovieCard)`
   .rating {
     display: block;
     position: absolute;
-    top: 60%;
+    top: calc(60% + 1.25rem);
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: ${props => getRatingColor(props.movie.rating).bg};
@@ -94,7 +99,7 @@ export default styled(MovieCard)`
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 0.5rem 1.5rem;
     .title-date-container {
       display: flex;
       justify-content: space-between;
@@ -103,36 +108,34 @@ export default styled(MovieCard)`
       .movie-title {
         flex: 1;
         font-size: 1.5em;
-        font-weight: bold;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
       .release-date {
-        font-size: 1.2em;
+        font-size: 1em;
         width: 5rem;
         text-align: center;
       }
     }
     .overview {
       position: relative;
-      height: 4.8em;
-      line-height: 1.2em;
-      font-size: 1em;
+      height: 5rem;
+      font-size: 0.8em;
+      line-height: 1.5em;
       word-wrap: break-word;
       overflow: hidden;
       &:after {
         content: "";
-        text-align: right;
         position: absolute;
         bottom: 0;
         right: 0;
-        width: 50%;
-        height: 1.2em;
+        width: 100%;
+        height: 3rem;
         background: linear-gradient(
-          to right,
+          to bottom,
           rgba(255, 255, 255, 0),
-          rgba(255, 255, 255, 1) 50%
+          rgba(255, 255, 255, 1)
         );
       }
     }
