@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/moogle/static/css/main.24a07e03.chunk.css",
-    "main.js": "/moogle/static/js/main.a782df93.chunk.js",
-    "main.js.map": "/moogle/static/js/main.a782df93.chunk.js.map",
+    "main.css": "/moogle/static/css/main.7bb1f284.chunk.css",
+    "main.js": "/moogle/static/js/main.69e15d3b.chunk.js",
+    "main.js.map": "/moogle/static/js/main.69e15d3b.chunk.js.map",
     "runtime-main.js": "/moogle/static/js/runtime-main.8a972d1e.js",
     "runtime-main.js.map": "/moogle/static/js/runtime-main.8a972d1e.js.map",
     "static/js/2.099c4973.chunk.js": "/moogle/static/js/2.099c4973.chunk.js",
     "static/js/2.099c4973.chunk.js.map": "/moogle/static/js/2.099c4973.chunk.js.map",
     "index.html": "/moogle/index.html",
-    "precache-manifest.512cf8d1a56ed38437a06729725e35cd.js": "/moogle/precache-manifest.512cf8d1a56ed38437a06729725e35cd.js",
+    "precache-manifest.55c65d799e79f4f17c899cceafb0e97c.js": "/moogle/precache-manifest.55c65d799e79f4f17c899cceafb0e97c.js",
     "service-worker.js": "/moogle/service-worker.js",
-    "static/css/main.24a07e03.chunk.css.map": "/moogle/static/css/main.24a07e03.chunk.css.map",
+    "static/css/main.7bb1f284.chunk.css.map": "/moogle/static/css/main.7bb1f284.chunk.css.map",
     "static/js/2.099c4973.chunk.js.LICENSE.txt": "/moogle/static/js/2.099c4973.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8a972d1e.js",
     "static/js/2.099c4973.chunk.js",
-    "static/css/main.24a07e03.chunk.css",
-    "static/js/main.a782df93.chunk.js"
+    "static/css/main.7bb1f284.chunk.css",
+    "static/js/main.69e15d3b.chunk.js"
   ]
 }
